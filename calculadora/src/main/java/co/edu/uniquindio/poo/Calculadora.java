@@ -6,6 +6,7 @@ public class Calculadora {
 
     /**
      * Metodo que permite sumar dos valores
+     * 
      * @param valor del numero 1
      * @param valor del numero 2
      * @return resultado de la suma de dos valores
@@ -30,18 +31,18 @@ public class Calculadora {
         return resaultado;
     }
 
-    public static void calcular(int opcion, int numA, int numB) {
+    public static void calcular(char opcion, int numA, int numB) {
         switch (opcion) {
-            case 1:
+            case '+':
                 System.out.println(sumar(numA, numB));
                 break;
-            case 2:
+            case '-':
                 System.out.println(restar(numA, numB));
                 break;
-            case 3:
+            case '*':
                 System.out.println(multiplicar(numA, numB));
                 break;
-            case 4:
+            case '/':
                 System.out.println(dividir(numA, numB));
                 break;
             default:
@@ -50,28 +51,45 @@ public class Calculadora {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Por favor seleccione la opcion que desea realizar");
-        System.out.println("1. Sumar");
-        System.out.println("2. Restar");
-        System.out.println("3. Multiplicar");
-        System.out.println("4. Dividir");
-        int opcion = scanner.nextInt();
 
-        System.out.println("Ingrese el valor 1");
-        int numA = scanner.nextInt() ;
+        boolean activo = true;
 
-        System.out.println("Ingrese el valor 2");
-        int numB = scanner.nextInt();
+        while (activo) {
 
-        calcular(opcion, numA, numB);
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Por favor seleccione la opcion que desea realizar");
+            System.out.println("1. Sumar");
+            System.out.println("2. Restar");
+            System.out.println("3. Multiplicar");
+            System.out.println("4. Dividir");
+            System.out.println("5. Salir");
+            char opcion = scanner.nextLine().charAt(0);
+
+            if (opcion=='+' || opcion=='-' || opcion=='*' || opcion=='/') {
+                System.out.println("Ingrese el valor 1");
+                int numA = scanner.nextInt();
+
+                System.out.println("Ingrese el valor 2");
+                int numB = scanner.nextInt();
+
+                calcular(opcion, numA, numB);
+            }
+            if(opcion=='5'){
+                activo = false;
+                System.out.println("Chaoooooooooooo....");
+            }
+
+        }
+
     }
 
-    /*public static void main(String[] args) {
-        int numA = 2;
-        int numB = 5;
-        int c = 10;
-        calcular(3, numA, numB);
-    }*/
+    /*
+     * public static void main(String[] args) {
+     * int numA = 2;
+     * int numB = 5;
+     * int c = 10;
+     * calcular(3, numA, numB);
+     * }
+     */
 
 }
