@@ -8,9 +8,9 @@ public class Estudiante {
     public String correo;
     public String telefono;
     public int edad;
-    public int nota1;
-    public int nota2;
-    public int nota3;
+    public double nota1;
+    public double nota2;
+    public double nota3;
 
     /**
      * Metodo constructor de la clase Estudiante
@@ -22,13 +22,16 @@ public class Estudiante {
      * @param telefono
      * @param edad
      */
-    public Estudiante(String id, String nombre, String apellidos, String correo, String telefono, int edad) {
+    public Estudiante(String id, String nombre, String apellidos, String correo, String telefono, int edad, double nota1, double nota2, double nota3) {
         this.id = id;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.correo = correo;
         this.telefono = telefono;
         this.edad = edad;
+        this.nota1 = nota1;
+        this.nota2 = nota2;
+        this.nota3 = nota3;
     }
 
     public String getId() {
@@ -59,6 +62,31 @@ public class Estudiante {
         return correo;
     }
 
+    public double getNota1(){
+        return nota1;
+    }
+
+    public double getNota2(){
+        return nota2;
+    }
+
+    public double getNota3(){
+        return nota3;
+    }
+
+    public void setNota1(double nota1){
+        this.nota1 = nota1;
+    }
+
+    public void setNota2(double nota2){
+        this.nota2 = nota2;
+    }
+
+    public void setNota3(double nota3){
+        this.nota3 = nota3;
+    }
+
+
     public void setCorreo(String correo) {
         this.correo = correo;
     }
@@ -79,10 +107,17 @@ public class Estudiante {
         this.edad = edad;
     }
 
+    public static double promedioNotas(double nota1, double nota2, double nota3){
+        return (nota1+nota2+nota3)/3;
+    }
+
     @Override
     public String toString() {
         return "Estudiante [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", correo=" + correo
-                + ", telefono=" + telefono + ", edad=" + edad + "]";
-    }   
+                + ", telefono=" + telefono + ", edad=" + edad + ", nota1=" + nota1 + ", nota2=" + nota2 + ", nota3="
+                + nota3 + " el promedio de notas es: " + promedioNotas(nota1, nota2, nota3) +"]";
+    }
+
+     
 
 }
