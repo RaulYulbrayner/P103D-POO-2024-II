@@ -22,16 +22,13 @@ public class Estudiante {
      * @param telefono
      * @param edad
      */
-    public Estudiante(String id, String nombre, String apellidos, String correo, String telefono, int edad, double nota1, double nota2, double nota3) {
+    public Estudiante(String id, String nombre, String apellidos, String correo, String telefono, int edad) {
         this.id = id;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.correo = correo;
         this.telefono = telefono;
         this.edad = edad;
-        this.nota1 = nota1;
-        this.nota2 = nota2;
-        this.nota3 = nota3;
     }
 
     public String getId() {
