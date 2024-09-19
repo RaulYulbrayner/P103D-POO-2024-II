@@ -5,6 +5,7 @@ public class Miembro {
     private int edad;
     private String genero;
     private String cedula;
+    private int telefono;
     private Membresia membresia;
 
     /**
@@ -16,21 +17,19 @@ public class Miembro {
      * @param cedula
      * @param membresia
      */
-    public Miembro(String nombre, int edad, String genero, String cedula, Membresia membresia) {
+    public Miembro(String nombre, int edad, String genero, String cedula, int telefono, Membresia membresia) {
         this.nombre = nombre;
         this.edad = edad;
         this.genero = genero;
         this.cedula = cedula;
+        this.telefono = telefono;
         this.membresia = membresia;
     }
 
-    /**
-     * Metodo toString de la clase miembro
-     */
     @Override
     public String toString() {
         return "Miembro [nombre=" + nombre + ", edad=" + edad + ", genero=" + genero + ", cedula=" + cedula
-                + ", membresia=" + membresia + "]";
+                + ", telefono=" + telefono + ", membresia=" + membresia + "]";
     }
 
     /**
@@ -76,6 +75,14 @@ public class Miembro {
 
     public void setMembresia(Membresia membresia) {
         this.membresia = membresia;
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
     }
 
 }

@@ -194,7 +194,6 @@ public class Gimnasio {
         }
     }
 
-    // --------------------------------------------------------------
     public int modaEdades() {
         int moda = -1;
         int maxFrecuencia = 0;
@@ -220,7 +219,77 @@ public class Gimnasio {
         return moda;
     }
 
-    // --------------------Completar---------------------------------
+    // --------------------Solución parcial 1------------------------
+
+    /**
+     * Método que devuelva el nombre más largo entre todos los entrenadores del
+     * gimnasio.
+     */
+    public String obtenerNombreEntrenadorMasLargo() {
+        String nombreMasLargo = entrenadores.get(0).getNombre();
+        for (Entrenador entrenador : entrenadores) {
+            if (entrenador.getNombre().length() > nombreMasLargo.length()) {
+                nombreMasLargo = entrenador.getNombre();
+            }
+        }
+        return nombreMasLargo;
+    }
+
+    /**
+     * Método que agregue a una lista los nombres de aquellos miembros cuyo número
+     * de teléfono, al sumar los dígitos, sea igual a 30. Ejemplo: "Juan" tiene el
+     * número de teléfono 311434446, la suma de los dígitos (3+1+1+4+3+4+4+4+6) es
+     * 30.
+     * 
+     * @return lista de miembros que los digitos suman 30
+     */
+    public LinkedList<Miembro> agregarMiembroConSumaTelefono() {
+        LinkedList<Miembro> miembrosConSuma = new LinkedList<>();
+
+        for (Miembro miembro : miembros) {
+            int telefono = miembro.getTelefono();
+            int sumaDigitos = 0;
+
+            for (int i = telefono; i > 0; i /= 10) {
+                sumaDigitos += i % 10; 
+            }
+
+            if (sumaDigitos == 30) {
+                miembrosConSuma.add(miembro);
+            }
+        }
+        return miembrosConSuma;
+    }
+
+    /**
+     * Método que agregue a una lista los nombres de los miembros que son
+     * palíndromos. Un nombre es considerado palíndromo si se lee de la misma manera
+     * de izquierda a derecha y de derecha a izquierda. ej: reconocer, ana.
+     * 
+     * @return lista de miembros con nombres palindromos
+     */
+    public LinkedList<Miembro> agregarMiembrosPalindromos() {
+        LinkedList<Miembro> miembrosPalindromos = new LinkedList<>();
+        for (Miembro miembro : miembros) {
+            String nombre = miembro.getNombre();
+            int longitud = nombre.length();
+            boolean esPalindromo = true;
+
+            for (int i = 0; i < longitud / 2; i++) {
+                if (nombre.charAt(i) != nombre.charAt(longitud - i - 1)) {
+                    esPalindromo = false;
+                    break;
+                }
+            }
+
+            if (esPalindromo) {
+                miembrosPalindromos.add(miembro);
+            }
+        }
+        return miembrosPalindromos;
+    }
+
+    // --------------------Fin Solución parcial 1--------------------
 
     public String getNombre() {
         return nombre;

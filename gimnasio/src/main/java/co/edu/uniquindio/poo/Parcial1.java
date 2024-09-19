@@ -2,17 +2,13 @@ package co.edu.uniquindio.poo;
 
 import java.util.LinkedList;
 
-/**
- * Hello world!
- *
- */
-public class App {
+public class Parcial1 {
+
     public static void main(String[] args) {
-        // Se crea el gimnasio
         Gimnasio gimnasio = new Gimnasio("Bodytech");
 
         // Se crean los miembros
-        Miembro miembro1 = new Miembro("Juan", 20, "Masculino", "12345", 311, Membresia.TRIMESTRAL);
+        Miembro miembro1 = new Miembro("reconocer", 20, "Masculino", "12345", 311, Membresia.TRIMESTRAL);
         Miembro miembro2 = new Miembro("Carlos", 17, "Masculino", "31143", 311434446, Membresia.ANUAL);
         Miembro miembro3 = new Miembro("Camilaa", 17, "Femenino", "19985", 313, Membresia.ANUAL);
 
@@ -32,29 +28,26 @@ public class App {
         // Se vinculan los miembros al entrenador
         entrenador.agregarMiembroAEntrenador(miembro2);
 
-        // Devolver lista con nombre invertidos
-        gimnasio.mostrarMensaje("Lista Nombres Invertidos");
-        gimnasio.listaNombresInverso();
+        // --------------------Solución parcial 1------------------------
 
-        // Obtener los miembros menores de edad
-        LinkedList<Miembro> menores = gimnasio.miembrosMenoresEdad();
+        // Punto A
+        gimnasio.mostrarMensaje("El nombre del entrenador mas largo es: " + gimnasio.obtenerNombreEntrenadorMasLargo());
 
-        // Imprimir los miembros menores de edad
-        System.out.println("Miembros menores de edad:");
-        for (Miembro miembro : menores) {
+        // Punto B
+        LinkedList<Miembro> miembroTelefono = gimnasio.agregarMiembroConSumaTelefono();
+        System.out.println("Los miembros con la suma de 30 en su telefono son:");
+        for (Miembro miembro : miembroTelefono) {
             System.out.println(miembro);
         }
 
-        // Calcular edad promedio
-        gimnasio.mostrarMensaje("La edad promedio es: " + gimnasio.calcularPromedioEdad());
+        // Punto C
+        LinkedList<Miembro> palindromos = gimnasio.agregarMiembrosPalindromos();
+        System.out.println("Los miembros con nombres palindromos son:");
+        for (Miembro miembro : palindromos) {
+            System.out.println(miembro);
+        }
 
-        // Eliminar nombre por cantidad de vocales
-        gimnasio.eliminarNombreVocales();
-
-        // Moda
-        gimnasio.mostrarMensaje("La Moda de edades: " + gimnasio.modaEdades());
-
-        System.out.println(gimnasio);
-
+        // --------------------Fin Solución parcial 1--------------------
     }
+
 }
