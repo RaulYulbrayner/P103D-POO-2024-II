@@ -13,8 +13,8 @@ public class Parcial1 {
         Miembro miembro3 = new Miembro("Camilaa", 17, "Femenino", "19985", 313, Membresia.ANUAL);
 
         // Se crean los entrenadores
-        Entrenador entrenador = new Entrenador("Jorge", "Pesas", "1234", "jorge@gmail.com");
-        Entrenador entrenador2 = new Entrenador("Jorge Mario", "Barras", "1264", "jorgem@gmail.com");
+        Entrenador entrenador = new Entrenador("Yulbraynner", "Pesas", "1234", "jorge@gmail.com");
+        Entrenador entrenador2 = new Entrenador("Jorge", "Barras", "1264", "jorgem@gmail.com");
 
         // Se agregan los miembros al gimnasio
         gimnasio.agregarMiembro(miembro1);
