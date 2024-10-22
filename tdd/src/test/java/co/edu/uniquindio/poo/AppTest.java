@@ -40,7 +40,7 @@ public class AppTest {
     public void testAssertThrows() {
         LOG.info("Inicio test assertThrows");
         Calculadora calculadora = new Calculadora();
-        assertThrows(Throwable.class, ()-> calculadora.divide(1, 0));
+        assertThrows(Throwable.class, ()-> calculadora.divide(10, 0));
         LOG.info("Fin test assertThrows");
     }
 

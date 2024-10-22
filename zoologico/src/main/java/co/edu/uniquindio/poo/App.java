@@ -6,7 +6,7 @@ package co.edu.uniquindio.poo;
  */
 public class App {
     public static void main(String[] args) {
-        Perro perro = new Perro("Bruno", "Amarillo", 2);
+        Animal perro = new Perro("Bruno", "Amarillo", 2);
         System.out.println(perro.toString());
         perro.dormir();
         perro.comer();
@@ -14,7 +14,7 @@ public class App {
 
         System.out.println("-----------------------------");
 
-        Gato gato = new Gato("Tom", "Negro", 5);
+        Animal gato = new Gato("Tom", "Negro", 5);
         System.out.println(gato.toString());
         gato.comer();
         gato.sonido();
