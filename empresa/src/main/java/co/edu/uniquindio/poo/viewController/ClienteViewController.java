@@ -73,7 +73,7 @@ public class ClienteViewController {
 
     @FXML
     void onLimpiar() {
-        limpiarCamposCliente();
+        limpiarSeleccion();
     }
 
     @FXML
