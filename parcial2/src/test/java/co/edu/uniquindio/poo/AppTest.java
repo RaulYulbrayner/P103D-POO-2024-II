@@ -19,6 +19,7 @@ public class AppTest {
     private Envio envio1, envio2, envio3;
 
     @Test
+    //3a
     public void testCalcularCostoEnvioCamion() {
         LOG.info("Iniciando test: testCalcularCostoEnvioCamion");
 
@@ -37,6 +38,7 @@ public class AppTest {
     }
 
     @Test
+    //3b
     public void testObtenerEnviosPesoMayor50() {
         LOG.info("Iniciando test: testObtenerEnviosPesoMayor50");
 
